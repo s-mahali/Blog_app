@@ -54,7 +54,7 @@ function Mypost() {
                 <img className="sm:w-96 w-48" src="https://i.ibb.co/2M7rtLk/Remote1.png" alt="image2" />
             </div>
         <h1 className={`text-2xl font-bold text-slate-900 cursor-pointer
-          ${isDarkMode ? "text-purple-400" : "text-textLightp"}
+          ${isDarkMode ? "text-blue-400" : "text-textLightp"}
            `}>
           You have no posts
         </h1>

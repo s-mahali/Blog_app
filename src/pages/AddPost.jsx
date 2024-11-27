@@ -10,7 +10,7 @@ function AddPost() {
         <Container>
         <div className='w-full px-2'>
           <h1 className={`text-2xl font-bold text-center mb-5 mt-1
-            ${isDarkMode ? "text-textDarkp" : "text-textLightp"}`}>
+            ${isDarkMode ? "text-textLightp" : "text-textLightp"}`}>
             Add new Post
           </h1>
         

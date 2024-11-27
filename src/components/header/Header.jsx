@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Logo, LogoutBtn, Container } from "../index";
 import { useSelector } from "react-redux";
 import { AlignRight, X } from "lucide-react";
+import ThemeButton from "../ThemeButton";
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -76,6 +77,12 @@ function Header() {
 
             {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center space-x-2">
+            <div
+                className=" z-10 flex items-center justify-center 
+                   transition-all duration-300"
+              >
+                <ThemeButton />
+                </div>
               {navItems.map(
                 (item) =>
                   item.active && (
@@ -104,11 +111,18 @@ function Header() {
           {/* Mobile Navigation */}
           <div
             className={`md:hidden absolute left-0 right-0 bg-[#1b1a1d] border-b border-red-300 shadow-lg transition-all duration-300 ease-in-out ${
-              menuOpen ? "opacity-100 visible top-full" : "opacity-0 invisible -top-4"
+              menuOpen
+                ? "opacity-100 visible top-full"
+                : "opacity-0 invisible -top-4"
             }`}
           >
-           
             <ul className="py-2 px-4 space-y-2">
+              <div
+                className=" z-10 flex items-center justify-center 
+                   transition-all duration-300"
+              >
+                <ThemeButton />
+              </div>
               {navItems.map(
                 (item) =>
                   item.active && (

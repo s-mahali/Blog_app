@@ -9,7 +9,7 @@ export default function RTE({name, control, label, defaultValue=""}) {
   return (
     <div className='w-full'> 
     {label && <label className={`inline-block mb-1 pl-1 
-          ${isDarkMode ? "text-slate-200" : "text-textLight"}
+          ${isDarkMode ? "text-dark" : "text-dark"}
       `}>{label}</label>}
 
     <Controller

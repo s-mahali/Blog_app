@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config";
+import authService from "../appwrite/auth";
 import { Button, Container } from "../components";
 import parse from "html-react-parser";
 import { useSelector,} from "react-redux";
@@ -9,8 +10,8 @@ import { ArrowRight } from "lucide-react";
 
 function Post() {
   const [post, setPost] = useState(null);
-  const [allPost, setAllPost] = useState([]);
-  const isDarkMode = useSelector((state) => state.theme.themeMode === "dark");
+ const [allPost, setAllPost] = useState([]);
+ const isDarkMode = useSelector((state) => state.theme.themeMode === "dark");
   
 
   const { slug } = useParams();
@@ -18,7 +19,10 @@ function Post() {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
   const isAuthor = post && userData ? post.userId === userData.$id : false;
-
+  
+  
+ 
+  
   useEffect(() => {
     appwriteService.getPosts([]).then((allPost) => {
       if (post) {
@@ -84,6 +88,7 @@ function Post() {
               >
                 Publish Date: {publishDate}
               </p>
+             
             </div>
 
             <div className="w-full md:w-4/5 mx-auto relative  rounded-xl p-2 overflow-hidden bg-gray-800">

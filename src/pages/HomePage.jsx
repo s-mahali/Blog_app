@@ -4,7 +4,7 @@ import { Container, PostCard } from "../components";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ThemeButton from "../components/ThemeButton";
+
 
 function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -23,9 +23,7 @@ function HomePage() {
      
      
       <div className="w-full py-4 md:py-8 mt-2 md:mt-4 text-center relative">
-      <span className="absolute top-0 right-7 z-10  p-1">
-      <ThemeButton />
-    </span>
+     
       <Container>
         <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="w-full md:w-3/4 flex flex-col md:flex-row justify-center items-center gap-3 md:gap-5 ">
@@ -64,9 +62,7 @@ function HomePage() {
   }
   return (
     <div className="w-full py-8 relative">
-      <span className="absolute top-0 right-7 z-10  p-1 ">
-            <ThemeButton />
-          </span>
+      
       <Container>
         <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {posts.map((post) => (
