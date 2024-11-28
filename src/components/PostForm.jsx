@@ -27,7 +27,7 @@ function PostForm({ post }) {
       console.log("data..", data)
     if (post) {
       const file = data.image[0]
-      
+      console.log("file", file)
         ? await appwriteService.uploadFile(data.image[0])
         : null;
 

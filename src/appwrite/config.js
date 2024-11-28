@@ -130,6 +130,20 @@ export class Service{
             fileId
         )
     }
+
+     getFileDownload(fileId){
+        try{
+            return this.bucket.getFileDownload(
+                conf.appwriteBucketId,
+                fileId
+            )
+            
+        }catch(error){
+            console.log("Appwrite serive :: getFileDownload :: error", error);
+            return null;
+            
+        }
+    }
 }
 
 const service = new Service();
