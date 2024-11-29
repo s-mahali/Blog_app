@@ -56,8 +56,7 @@ function Post() {
     month: "short",
     day: "numeric",
   });
-  console.log("isAuthor", post?.$createdAt);
-  console.log("post", post);
+  
 
   return post ? (
     <div
