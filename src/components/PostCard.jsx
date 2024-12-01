@@ -18,6 +18,7 @@ function PostCard({ title, $id, featuredImage, className = "" }) {
         <div className="w-full aspect-video h-48 justify-center overflow-hidden  mb-4">
           <img
             src={appwriteService.getFilePreview(featuredImage)}
+           
             alt={title}
             className="rounded-xl w-full h-full object-cover"
           ></img>

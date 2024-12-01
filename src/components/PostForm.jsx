@@ -30,17 +30,18 @@ function PostForm({ post }) {
       
         ? await appwriteService.uploadFile(data.image[0])
         : null;
-
+        
       if (file) {
         
         appwriteService.deleteFile(post.featuredImage);
         toast.success("Image Updated");
+       
       }
 
       const dbPost = await appwriteService.updatePost(post.$id, {
         ...data,
-        featuredImage: file ? file.$id : undefined
-       
+        featuredImage: file ? file.$id : undefined,
+        
       });
 
       if (dbPost) {
@@ -50,7 +51,7 @@ function PostForm({ post }) {
       }
     } else {
       const file = await appwriteService.uploadFile(data.image[0]);
-
+  
       if (file) {
         const fileId = file.$id;
         data.featuredImage = fileId;
